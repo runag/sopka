@@ -1,3 +1,5 @@
 {
-  "autoclose": false
+  "autoclose": false,
+  "tabsize": 2,
+  "tabstospaces": true
 }
