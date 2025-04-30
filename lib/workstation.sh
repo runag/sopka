@@ -125,14 +125,6 @@ workstation::linux::deploy_identities() {
   done
 }
 
-# Runagfiles
-workstation::add_runagfiles() {
-  local list_path="$1" # should be in the body
-
-  pass::use --body "${list_path}" | runagfile::add_from_list
-  test "${PIPESTATUS[*]}" = "0 0" || fail
-}
-
 # Config
 workstation::get_config_dir() {
   local full_path="${XDG_CONFIG_HOME:-"${HOME}/.config"}/workstation-runagfile${1:+"/$1"}"

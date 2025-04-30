@@ -121,11 +121,6 @@ workstation::identity::use() {
     github::install_profile_from_pass "${identity_path}/github" || fail
   fi
 
-  # runagfiles
-  if pass::exists "${identity_path}/runag/runagfiles"; then
-    workstation::add_runagfiles "${identity_path}/runag/runagfiles" || fail
-  fi
-
   if [ -n "${directory_path:-}" ]; then
     (
       cd "${directory_path}" || fail
