@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#  Copyright 2012-2024 Rùnag project contributors
+#  Copyright 2012-2025 Runag project contributors
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -14,5 +14,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-# shellcheck disable=SC2046
-shellcheck $(find . -name '*.sh')
+# Find all .sh files and files in ./bin/ and ./completions/ directories, then check them with shellcheck
+find . \
+  -type f -name '*.sh' -print0 -o \
+  -type f -path './bin/*' -print0 -o \
+  -type f -path './completions/*' -print0 \
+   | xargs -0 shellcheck

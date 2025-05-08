@@ -3,7 +3,7 @@
     "maxFileSize": 52428800
   },
   "output": {
-    "filePath": "workstation-runagfile-repomix.xml",
+    "filePath": "sopka-repomix.xml",
     "style": "xml",
     "parsableStyle": false,
     "fileSummary": false,

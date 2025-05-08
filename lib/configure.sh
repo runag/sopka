@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#  Copyright 2012-2024 Rùnag project contributors
+#  Copyright 2012-2025 Runag project contributors
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 workstation::linux::configure() (
   # Load operating system identification data
+  # shellcheck disable=SC1091
   . /etc/os-release || fail
 
   ## System ##
@@ -90,6 +91,7 @@ workstation::linux::configure() (
 
 workstation::linux::gnome::configure() (
   # Load operating system identification data
+  # shellcheck disable=SC1091
   . /etc/os-release || fail
  
   # use dconf-editor to find key/value pairs

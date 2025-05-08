@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#  Copyright 2012-2024 Rùnag project contributors
+#  Copyright 2012-2025 Runag project contributors
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 workstation::linux::install_packages() (
   # Load operating system identification data
+  # shellcheck disable=SC1091
   . /etc/os-release || fail
 
   # install packages
@@ -31,7 +32,6 @@ workstation::linux::install_packages() (
 
   # install shellfiles
   shellfile::install_loader::bash || fail
-  shellfile::install_runag_path_profile --source-now || fail
   shellfile::install_local_bin_path_profile --source-now || fail
   shellfile::install_direnv_rc || fail
 
@@ -91,6 +91,7 @@ workstation::linux::install_packages() (
 
 workstation::linux::install_packages::debian() (
   # Load operating system identification data
+  # shellcheck disable=SC1091
   . /etc/os-release || fail
 
   if [ "${CI:-}" = "true" ]; then
